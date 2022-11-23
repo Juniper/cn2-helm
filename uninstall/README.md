@@ -24,8 +24,9 @@ kubectl delete -f k8s.cni.cncf.io_network-attachment-definitions.yaml
 ### Download tar.gz
 The uninstall.tar.gz can now be downloaded from the Git repo (Path: https://github.com/Juniper/cn2-helm/tree/main/uninstall) and installed anywhere, where Kubernetes cluster is deployed.
 
-#### cd into uninstall folder: 
+#### Untar and cd into uninstall folder: 
 ```
+tar -xvf unintall.tar.gz
 cd uninstall  
 ```
 
