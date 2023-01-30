@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 
-repoUrl: enterprise-hub.juniper.net/contrail-container-early                                                         # cn2 repo url
-manifestBuild: 0.0.0.6041                                                            # cn2 build version
+repoUrl: enterprise-hub.juniper.net/contrail-container-prod                                                 # cn2 repo url
+manifestBuild: 22.4.0.284                                                            # cn2 build version
 
 controlDataNetworks:
   enabled: false
