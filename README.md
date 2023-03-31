@@ -1,6 +1,6 @@
 # Welcome to the repository for CN2 Helm
 
-These contents supplement the product itself with some open source CN2 deployers, guides, and configuration examples
+These contents supplement the product itself with some open source CN2 deployers, guides, and configuration examples.
 
 In order to make use of this, you'll need access to the Juniper Networks [CN2 product](https://www.juniper.net/us/en/products/sdn-and-orchestration/contrail/cloud-native-contrail-networking.html) as a customer or [free trial](https://www.juniper.net/us/en/forms/cn2-free-trial.html) user.
 
