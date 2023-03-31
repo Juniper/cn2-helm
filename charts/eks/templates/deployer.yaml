@@ -210,6 +210,7 @@ data:
       name: contrail-k8s-apiserver
       namespace: contrail-system
     spec:
+      autonomousSystem: 64512
       common:
         containers:
         - image: {{ .Values.repoUrl }}/contrail-k8s-apiserver:{{ .Values.manifestBuild }}
@@ -263,6 +264,10 @@ data:
         dns:
         - contrailstatus.contrail.svc
         name: contrailstatusmonitor-tls
+        namespace: contrail
+      - name: central-collector-tls
+        namespace: contrail
+      - name: telemetry-exporter-tls
         namespace: contrail
     ---
     apiVersion: configplane.juniper.net/v1alpha1
@@ -331,6 +336,7 @@ data:
         - image: {{ .Values.repoUrl }}/contrail-init:{{ .Values.manifestBuild }}
           name: contrail-init
       introspectSslEnable: true
+      sandeshSslEnable: true
       xmppAuthEnable: true
     ---
     apiVersion: dataplane.juniper.net/v1alpha1
@@ -341,9 +347,12 @@ data:
     spec:
       agent:
         default:
+          collectors:
+          - localhost:6700
           xmppAuthEnable: true
         sandesh:
           introspectSslEnable: true
+          sandeshSslEnable: true
       common:
         containers:
         - image: {{ .Values.repoUrl }}/contrail-vrouter-agent:{{ .Values.manifestBuild }}
@@ -437,3 +446,4 @@ data:
       gateway: {{ .Values.controlDataNetworks.gateway }}
 ---
 {{ end }}
+
