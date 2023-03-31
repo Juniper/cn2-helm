@@ -4,7 +4,7 @@
 
 
 repoUrl: enterprise-hub.juniper.net/contrail-container-prod                                                 # cn2 repo url
-manifestBuild: 22.4.0.284                                                            # cn2 build version
+manifestBuild: 23.1.0.282                                                            # cn2 build version
 
 controlDataNetworks:
   enabled: false
@@ -12,4 +12,4 @@ controlDataNetworks:
   gateway: 10.204.217.254                                                           # data network gateway 
 
 # incase of secure repo define imagePullSecret 
-imagePullSecret:
+imagePullSecret: 
