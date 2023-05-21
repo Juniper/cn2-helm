@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: coredns-deployment-update-init-test
+  namespace: contrail
+  annotations:
+     "helm.sh/hook": post-install
+     "helm.sh/hook-weight": "1"
+spec:
+  template:
+    metadata:
+      name: coredns-deployment-update-init
+    spec:
+      serviceAccountName: contrail-serviceaccount
+      restartPolicy: Never
+      containers:
+        - name: coredns-deployment-update-init
+          image: "bitnami/kubectl"
+          command: ["/bin/bash", "-c"]
+          args: ["ds_name='contrail-vrouter-nodes';namespace='contrail';timeout_ds=$((SECONDS + 600)); timeout_ready=$((SECONDS + 300)); while ! kubectl get daemonset \"$ds_name\" -n \"$namespace\" &> /dev/null; do if [[ $SECONDS -gt $timeout_ds ]]; then echo \"Timeout reached. DaemonSet '$ds_name' not found within 5 minutes.\"; exit 1; fi; sleep 1; done; echo \"DaemonSet '$ds_name' found. Waiting for pods to be ready...\"; while true; do desired_ready=$(kubectl get daemonset \"$ds_name\" -n \"$namespace\" -o jsonpath='{.status.desiredNumberScheduled},{.status.numberReady}'); if [[ \"$desired_ready\" == \"0,0\" ]]; then echo \"Desired and ready counts are both zero. No pods to wait for.\"; exit 0; fi; ready=$(kubectl get daemonset \"$ds_name\" -n \"$namespace\" -o jsonpath='{.status.numberReady}'); desired=$(kubectl get daemonset \"$ds_name\" -n \"$namespace\" -o jsonpath='{.status.desiredNumberScheduled}'); if [[ \"$ready\" == \"$desired\" ]]; then echo \"All pods are ready.\"; break; fi; if [[ $SECONDS -gt $timeout_ready ]]; then echo \"Timeout reached. Not all pods are ready within 10 minutes.\"; exit 1; fi; sleep 1; done; echo \"I am ready.\""]

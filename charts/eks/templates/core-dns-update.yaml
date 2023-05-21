@@ -1,0 +1,72 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: {{ .Values.imagePullSecret }} 
+kind: Secret
+metadata:
+  name: registrypullsecret
+  namespace: kube-system
+type: kubernetes.io/dockerconfigjson
+---
+apiVersion: v1
+imagePullSecrets:
+- name: registrypullsecret
+kind: ServiceAccount
+metadata:
+  name: coredns-deployment-update
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: coredns-deployment-update-role
+  namespace: kube-system
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "patch","update"]
+  resourceNames: ["coredns"]
+- apiGroups: ["apps"]
+  resources: ["replicasets"]
+  verbs: ["patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: coredns-deployment-update-role-binding
+  namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: coredns-deployment-update-role
+subjects:
+- kind: ServiceAccount
+  name: coredns-deployment-update
+  namespace: kube-system
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: coredns-deployment-update-test
+  namespace: kube-system 
+  annotations:
+     "helm.sh/hook": post-install
+     "helm.sh/hook-weight": "10"
+spec:
+  template:
+    metadata:
+      name: coredns-deployment-update
+    spec:
+      serviceAccountName: coredns-deployment-update
+      restartPolicy: Never
+      containers:
+        - name: coredns-deployment-update
+          image: "bitnami/kubectl"
+          command:
+            - /bin/bash
+            - -c
+          args:
+          - |
+            replicas=$(kubectl get deployment coredns --namespace kube-system -o jsonpath='{.spec.replicas}')
+            kubectl patch deployment coredns --namespace kube-system --type json -p='[{"op": "replace", "path": "/spec/replicas", "value": 0}]'
+            sleep 30
+            kubectl patch deployment coredns --namespace kube-system --type json -p='[{"op": "replace", "path": "/spec/replicas", "value": '"$replicas"'}]'

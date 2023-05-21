@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   cn2-eks:
   - apiVersion: v2
+    appVersion: 23.1.1
+    created: "2023-05-21T03:09:09.385422272Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ad1f4cd8a0327de3264896db0b5f378045cd8838bb1cd7cc422f3d4f2670631
+    name: cn2-eks
+    type: application
+    urls:
+    - https://juniper.github.io/cn2-helm/cn2-eks-23.1.1.tgz
+    version: 23.1.1
+  - apiVersion: v2
     appVersion: "23.1"
     created: "2023-03-31T09:29:08.459613501Z"
     description: A Helm chart for Kubernetes
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://juniper.github.io/cn2-helm/cn2-eks-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-31T09:29:08.451033415Z"
+generated: "2023-05-21T03:09:09.374304487Z"
