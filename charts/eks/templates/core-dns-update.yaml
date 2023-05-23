@@ -60,9 +60,9 @@ spec:
       restartPolicy: Never
       containers:
         - name: coredns-deployment-update
-          image: "bitnami/kubectl"
+          image: "enterprise-hub.juniper.net/contrail-container-prod/ekscoredns_posthook:v1"
           command:
-            - /bin/bash
+            - /bin/sh
             - -c
           args:
           - |
