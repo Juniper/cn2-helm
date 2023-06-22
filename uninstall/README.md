@@ -1,25 +1,4 @@
 How to uninstall
-### Single Step
-#### cd to uninstall
-```
-./uninstall.sh
-```
-### Multi Step
-#### cd to uninstall
-```
-kubectl delete -f contrail.yaml
-kubectl delete gvc default-global-vrouter-config
-kubectl delete gsc default-global-system-config
-kubectl delete -f contrail_system.yaml
-kubectl delete -f deployer.yaml
-kubectl delete -f configplane.juniper.net_apiservers.yaml
-kubectl delete -f controlplane.juniper.net_controls.yaml
-kubectl delete -f configplane.juniper.net_controllers.yaml
-kubectl delete -f configplane.juniper.net_kubemanagers.yaml
-kubectl delete -f dataplane.juniper.net_vrouters.yaml
-kubectl delete -f k8s.cni.cncf.io_network-attachment-definitions.yaml
-```
-
 
 ### Download tar.gz
 The uninstall.tar.gz can now be downloaded from the Git repo (Path: https://github.com/Juniper/cn2-helm/tree/main/uninstall) and installed anywhere, where Kubernetes cluster is deployed.
