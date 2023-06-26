@@ -10,6 +10,7 @@ cd uninstall
 ```
 
 #### Run the uninstall script: 
+* Make sure to run the below script from within the uninstall directory.
 ```
 ./uninstall.sh 
 ```
