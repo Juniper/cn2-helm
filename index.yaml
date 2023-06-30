@@ -2,43 +2,53 @@ apiVersion: v1
 entries:
   cn2-eks:
   - apiVersion: v2
-    appVersion: 23.1.1
-    created: "2023-05-21T03:09:09.385422272Z"
+    appVersion: 23.2.0
+    created: "2023-06-30T07:12:47.868163984Z"
     description: A Helm chart for Kubernetes
-    digest: 9ad1f4cd8a0327de3264896db0b5f378045cd8838bb1cd7cc422f3d4f2670631
+    digest: adca12e0870069a046ea8cacb81ad01165be9b4604aa3070b4050e5fe984e9dd
     name: cn2-eks
     type: application
     urls:
-    - https://juniper.github.io/cn2-helm/cn2-eks-23.1.1.tgz
+    - cn2-eks-23.2.0.tgz
+    version: 23.2.0
+  - apiVersion: v2
+    appVersion: 23.1.1
+    created: "2023-06-30T07:12:47.864666259Z"
+    description: A Helm chart for Kubernetes
+    digest: 79d366f0a6b960255dff9b49e669458d96919165a4d8a31295afc24ca16fc590
+    name: cn2-eks
+    type: application
+    urls:
+    - cn2-eks-23.1.1.tgz
     version: 23.1.1
   - apiVersion: v2
     appVersion: "23.1"
-    created: "2023-03-31T09:29:08.459613501Z"
+    created: "2023-06-30T07:12:47.86218631Z"
     description: A Helm chart for Kubernetes
     digest: 36cd691446d8ddf00ddc85ce2a6888d5e72fb0b8e13a86d53957538308350a07
     name: cn2-eks
     type: application
     urls:
-    - https://juniper.github.io/cn2-helm/cn2-eks-23.1.0.tgz
+    - cn2-eks-23.1.0.tgz
     version: 23.1.0
   - apiVersion: v2
     appVersion: 22.4.0
-    created: "2023-03-31T09:29:08.456593885Z"
+    created: "2023-06-30T07:12:47.859799291Z"
     description: A Helm chart for Kubernetes
     digest: eaaac7ed4de42b865550ac00d6529ae4ea9da7fc3c525fc0c2742a869804163b
     name: cn2-eks
     type: application
     urls:
-    - https://juniper.github.io/cn2-helm/cn2-eks-0.2.1.tgz
+    - cn2-eks-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 22.4.0
-    created: "2023-03-31T09:29:08.453771481Z"
+    created: "2023-06-30T07:12:47.856269598Z"
     description: A Helm chart for Kubernetes
     digest: 40ace49870197a0c395e12ee3ede0265c2186af8a00f13a07924a56d73dc4864
     name: cn2-eks
     type: application
     urls:
-    - https://juniper.github.io/cn2-helm/cn2-eks-0.1.0.tgz
+    - cn2-eks-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-21T03:09:09.374304487Z"
+generated: "2023-06-30T07:12:47.853175162Z"
