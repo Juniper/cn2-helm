@@ -4,7 +4,7 @@
 
 
 repoUrl: enterprise-hub.juniper.net/contrail-container-prod                                                 # cn2 repo url
-manifestBuild: 23.1.0.282                                                            # cn2 build version
+manifestBuild: 23.2.0.156                                                           # cn2 build version
 
 controlDataNetworks:
   enabled: false
