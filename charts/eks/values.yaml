@@ -13,3 +13,4 @@ controlDataNetworks:
 
 # incase of secure repo define imagePullSecret 
 imagePullSecret: 
+iamRole: 

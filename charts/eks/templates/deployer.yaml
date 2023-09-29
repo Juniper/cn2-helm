@@ -42,6 +42,10 @@ kind: ServiceAccount
 metadata:
   name: contrail-serviceaccount
   namespace: contrail
+{{ if .Values.iamRole }}
+  annotations:
+    eks.amazonaws.com/role-arn: {{ .Values.iamRole }}
+{{ end }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
