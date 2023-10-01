@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   cn2-eks:
   - apiVersion: v2
+    appVersion: 23.3.0
+    created: "2023-09-29T06:49:23.662337988Z"
+    description: A Helm chart for Kubernetes
+    digest: ea6f74cd55ffe0e6b140fe91b916dbcc348598d98cf9f53d3bda09e7bd64d135
+    name: cn2-eks
+    type: application
+    urls:
+    - cn2-eks-23.3.0.tgz
+    version: 23.3.0
+  - apiVersion: v2
     appVersion: 23.2.0
-    created: "2023-06-30T07:12:47.868163984Z"
+    created: "2023-09-29T06:49:23.6588563Z"
     description: A Helm chart for Kubernetes
     digest: adca12e0870069a046ea8cacb81ad01165be9b4604aa3070b4050e5fe984e9dd
     name: cn2-eks
@@ -13,7 +23,7 @@ entries:
     version: 23.2.0
   - apiVersion: v2
     appVersion: 23.1.1
-    created: "2023-06-30T07:12:47.864666259Z"
+    created: "2023-09-29T06:49:23.656362671Z"
     description: A Helm chart for Kubernetes
     digest: 79d366f0a6b960255dff9b49e669458d96919165a4d8a31295afc24ca16fc590
     name: cn2-eks
@@ -23,7 +33,7 @@ entries:
     version: 23.1.1
   - apiVersion: v2
     appVersion: "23.1"
-    created: "2023-06-30T07:12:47.86218631Z"
+    created: "2023-09-29T06:49:23.653916602Z"
     description: A Helm chart for Kubernetes
     digest: 36cd691446d8ddf00ddc85ce2a6888d5e72fb0b8e13a86d53957538308350a07
     name: cn2-eks
@@ -33,7 +43,7 @@ entries:
     version: 23.1.0
   - apiVersion: v2
     appVersion: 22.4.0
-    created: "2023-06-30T07:12:47.859799291Z"
+    created: "2023-09-29T06:49:23.651006885Z"
     description: A Helm chart for Kubernetes
     digest: eaaac7ed4de42b865550ac00d6529ae4ea9da7fc3c525fc0c2742a869804163b
     name: cn2-eks
@@ -43,7 +53,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 22.4.0
-    created: "2023-06-30T07:12:47.856269598Z"
+    created: "2023-09-29T06:49:23.648047022Z"
     description: A Helm chart for Kubernetes
     digest: 40ace49870197a0c395e12ee3ede0265c2186af8a00f13a07924a56d73dc4864
     name: cn2-eks
@@ -51,4 +61,4 @@ entries:
     urls:
     - cn2-eks-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-30T07:12:47.853175162Z"
+generated: "2023-09-29T06:49:23.645456069Z"
